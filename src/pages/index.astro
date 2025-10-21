@@ -1,20 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-Amicbridge where we built trust between people 
-
-Amicbridge supports people white assets that they can lend out crypto,apartment,car anything that can make your money grow we have network built on people ho
-lend and borrowing. 
-`;
 ---
 
-<Layout title="Welcome to Amicbridge.com.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Amicbridge</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-    </p>
+<Layout title="Welcome to Amicbridge.com">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center py-24 px-6 sm:px-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-6">
+        Amicbridge
+      </h1>
+      <p class="text-xl sm:text-2xl text-blue-200 mb-12">
+        Where we build <span class="text-blue-400">trust</span> between people.
+      </p>
+
+      <div class="bg-[#1b2a3a]/70 border border-[#2f3a48] rounded-2xl shadow-2xl p-10 text-left sm:text-center transition-all duration-500 hover:shadow-blue-900/40">
+        <p class="text-lg text-gray-200 leading-relaxed mb-6">
+          Amicbridge is a network built on trust — connecting lenders and borrowers directly, without
+          banks or hidden costs. Our goal is to make financial growth accessible, transparent, and human.
+        </p>
+
+        <p class="text-lg text-gray-200 leading-relaxed">
+          People can lend or borrow using real assets — from crypto to cars, apartments, or other value-backed
+          items. We empower lenders to grow their capital and help borrowers achieve their goals. Everyone wins
+          when finance is built on <span class="text-blue-400 font-semibold">trust</span>.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <a
+          href="/about"
+          class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-blue-700/50 transition-all duration-300"
+        >
+          Learn More About Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 sm:px-12 text-center">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+      <div class="bg-[#1b2a3a]/70 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-400 transition-all duration-300">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-3">Peer-to-Peer Trust</h3>
+        <p class="text-gray-200">
+          Every connection on Amicbridge is verified and transparent. Trust isn’t optional — it’s the foundation of
+          our network.
+        </p>
+      </div>
+
+      <div class="bg-[#1b2a3a]/70 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-400 transition-all duration-300">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-3">Fair Growth</h3>
+        <p class="text-gray-200">
+          Lenders grow their capital through fair, transparent deals, while borrowers access opportunities that help
+          them move forward.
+        </p>
+      </div>
+
+      <div class="bg-[#1b2a3a]/70 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-400 transition-all duration-300">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-3">Transparent Network</h3>
+        <p class="text-gray-200">
+          No middlemen. No hidden fees. Just people building financial bridges with honesty and mutual respect.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <a
+        href="/contact"
+        class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-blue-700/50 transition-all duration-300"
+      >
+        Get Access to the Network
+      </a>
+    </div>
+  </section>
 </Layout>
