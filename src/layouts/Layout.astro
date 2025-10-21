@@ -29,8 +29,18 @@ const { title } = Astro.props;
     />
   </head>
 
+  <!-- The background below exactly matches your homepage look -->
   <body
-    class="antialiased text-white bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#3b4b61] via-[#1c2733] to-[#0d1924] bg-noise bg-fixed"
+    class="antialiased text-white bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#243447] via-[#1b2838] to-[#0d1825] bg-noise bg-fixed min-h-screen"
   >
-    <div class="flex flex-col min-h-screen px-6 sm:px-12">
-      <div class="flex flex-col w-full max-w-5xl mx-auto grow
+    <div class="flex flex-col min-h-screen">
+      <Header />
+
+      <main class="flex-grow px-6 sm:px-12 py-12 max-w-6xl mx-auto">
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
