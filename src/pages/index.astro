@@ -1,75 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
 ---
 
-<Layout title="Welcome to Amicbridge.com">
-  <section class="min-h-screen flex flex-col justify-center items-center text-center py-24 px-6 sm:px-12">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-6">
-        Amicbridge
+<Layout title="Amicbridge | Building Trust Between People, Not Institutions">
+  <!-- Hero Section -->
+  <section class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 sm:px-12 bg-gradient-to-b from-[#1d3557] via-[#1a2f4f] to-[#0b1724] text-white">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
+        Building <span class="text-blue-400">Trust</span> Between<br />
+        People, Not Institutions
       </h1>
-      <p class="text-xl sm:text-2xl text-blue-200 mb-12">
-        Where we build <span class="text-blue-400">trust</span> between people.
+
+      <p class="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-10">
+        <strong>Amicbridge</strong> is a private community where verified members connect directly —
+        lenders, borrowers, and investors working together safely and transparently.
+        <br />
+        <span class="text-gray-300 italic">
+          We don’t handle money — we build verified bridges between people who do.
+        </span>
       </p>
 
-      <div class="bg-[#1b2a3a]/70 border border-[#2f3a48] rounded-2xl shadow-2xl p-10 text-left sm:text-center transition-all duration-500 hover:shadow-blue-900/40">
-        <p class="text-lg text-gray-200 leading-relaxed mb-6">
-          Amicbridge is a network built on trust — connecting lenders and borrowers directly, without
-          banks or hidden costs. Our goal is to make financial growth accessible, transparent, and human.
+      <div class="bg-[#132235]/90 border border-[#2a3b4f] shadow-xl rounded-2xl py-10 px-8 sm:px-12 max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-blue-300">
+          Private Membership Access
+        </h2>
+        <p class="text-gray-200 mb-4 text-lg">
+          <span class="text-white font-semibold text-xl">$100</span>
+          <span class="text-gray-400 text-sm">(one-time access fee)</span>
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Membership gives you verified access to our private contact network — where trusted lenders
+          and borrowers meet directly, with safety and confidentiality ensured.
         </p>
 
-        <p class="text-lg text-gray-200 leading-relaxed">
-          People can lend or borrow using real assets — from crypto to cars, apartments, or other value-backed
-          items. We empower lenders to grow their capital and help borrowers achieve their goals. Everyone wins
-          when finance is built on <span class="text-blue-400 font-semibold">trust</span>.
-        </p>
-      </div>
-
-      <div class="mt-12">
         <a
-          href="/about"
-          class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-blue-700/50 transition-all duration-300"
+          href="https://wa.me/yourwhatsapplink"
+          target="_blank"
+          class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:shadow-green-700/40"
         >
-          Learn More About Us
+          💬 Contact Us on WhatsApp to Join
         </a>
+
+        <p class="text-gray-400 text-xs mt-4">
+          After manual payment verification, you’ll receive your secure private access link.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="py-20 px-6 sm:px-12 text-center">
+  <!-- Trust Features -->
+  <section class="py-20 px-6 sm:px-12 bg-[#0d1825] text-center text-gray-100">
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
-      <div class="bg-[#1b2a3a]/70 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-400 transition-all duration-300">
-        <h3 class="text-2xl font-semibold text-blue-400 mb-3">Peer-to-Peer Trust</h3>
-        <p class="text-gray-200">
-          Every connection on Amicbridge is verified and transparent. Trust isn’t optional — it’s the foundation of
-          our network.
+      <div class="bg-[#1b2a3a]/80 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-500 transition-all duration-300">
+        <h3 class="text-2xl font-bold text-blue-400 mb-3">Verified Network</h3>
+        <p>
+          Every member is identity-verified to ensure full trust and transparency. Your safety and
+          integrity come first.
         </p>
       </div>
 
-      <div class="bg-[#1b2a3a]/70 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-400 transition-all duration-300">
-        <h3 class="text-2xl font-semibold text-blue-400 mb-3">Fair Growth</h3>
-        <p class="text-gray-200">
-          Lenders grow their capital through fair, transparent deals, while borrowers access opportunities that help
-          them move forward.
+      <div class="bg-[#1b2a3a]/80 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-500 transition-all duration-300">
+        <h3 class="text-2xl font-bold text-blue-400 mb-3">Direct Lending</h3>
+        <p>
+          No intermediaries. Lenders and borrowers connect directly with verified profiles and fair
+          agreements.
         </p>
       </div>
 
-      <div class="bg-[#1b2a3a]/70 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-400 transition-all duration-300">
-        <h3 class="text-2xl font-semibold text-blue-400 mb-3">Transparent Network</h3>
-        <p class="text-gray-200">
-          No middlemen. No hidden fees. Just people building financial bridges with honesty and mutual respect.
+      <div class="bg-[#1b2a3a]/80 p-8 rounded-xl border border-[#2f3a48] hover:border-blue-500 transition-all duration-300">
+        <h3 class="text-2xl font-bold text-blue-400 mb-3">Confidential Access</h3>
+        <p>
+          All member communications are secure and private, ensuring a trusted environment for
+          financial collaboration.
         </p>
       </div>
-    </div>
-
-    <div class="mt-16">
-      <a
-        href="/contact"
-        class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-blue-700/50 transition-all duration-300"
-      >
-        Get Access to the Network
-      </a>
     </div>
   </section>
 </Layout>
