@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="List Your Asset | Amicbridge">
+  <section class="min-h-screen bg-transparent text-gray-100 py-20 px-6 sm:px-12">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h1 class="text-5xl font-extrabold text-white mb-6">
+        List Your Asset on <span class="text-blue-400">Amicbridge</span>
+      </h1>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        Turn your property, company, or project into tokenized shares.  
+        Fill out the form below — our verification team will review your submission,  
+        help you tokenize it securely, and prepare it for verified investors.
+      </p>
+    </div>
+
+    <form class="max-w-3xl mx-auto bg-[#1b2a3a]/70 p-10 rounded-2xl shadow-xl border border-[#2f3a48] space-y-6">
+      <div>
+        <label class="block text-gray-300 mb-2">Full Name</label>
+        <input type="text" placeholder="Enter your name"
+          class="w-full px-4 py-3 rounded-lg bg-[#0f1a25] border border-[#2f3a48] text-gray-100 focus:border-blue-400 outline-none" required />
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2">Email Address</label>
+        <input type="email" placeholder="Enter your email"
+          class="w-full px-4 py-3 rounded-lg bg-[#0f1a25] border border-[#2f3a48] text-gray-100 focus:border-blue-400 outline-none" required />
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2">Asset Type</label>
+        <select
+          class="w-full px-4 py-3 rounded-lg bg-[#0f1a25] border border-[#2f3a48] text-gray-100 focus:border-blue-400 outline-none">
+          <option>Real Estate</option>
+          <option>Business</option>
+          <option>Vehicle</option>
+          <option>Digital Project</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2">Asset Description</label>
+        <textarea placeholder="Describe your asset, value, and purpose for tokenization..."
+          class="w-full px-4 py-3 rounded-lg bg-[#0f1a25] border border-[#2f3a48] text-gray-100 focus:border-blue-400 outline-none"
+          rows="5" required></textarea>
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2">Estimated Value (USD)</label>
+        <input type="number" placeholder="Enter asset value"
+          class="w-full px-4 py-3 rounded-lg bg-[#0f1a25] border border-[#2f3a48] text-gray-100 focus:border-blue-400 outline-none" required />
+      </div>
+
+      <div>
+        <label class="block text-gray-300 mb-2">Upload Documentation (Optional)</label>
+        <input type="file" class="w-full text-gray-300" />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full mt-6 bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold py-3 rounded-lg transition-all duration-300">
+        Submit for Verification
+      </button>
+
+      <p class="text-sm text-gray-400 text-center mt-4">
+        After submission, our verification team will contact you through email or WhatsApp  
+        to confirm your asset and guide you through the tokenization process.
+      </p>
+    </form>
+  </section>
+</Layout>
