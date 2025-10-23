@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
-import netlify from '@astrojs/netlify/functions';
+import netlify from '@astrojs/netlify/static';
 
-// ✅ Astro configuration for Netlify (server rendering)
+// ✅ Static build (no server functions)
 export default defineConfig({
-  output: 'server', // enables SSR
+  output: 'static',
   adapter: netlify(),
-  site: 'https://amicbridge.com', // your live site URL
+  site: 'https://amicbridge.com',
 });
