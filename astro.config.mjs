@@ -1,24 +1,9 @@
 import { defineConfig } from 'astro/config';
-import netlify from '@astrojs/netlify';
+import netlify from '@astrojs/netlify/functions';
 
-// Astro configuration
+// ✅ Astro configuration for Netlify (server rendering)
 export default defineConfig({
-  // Enable server-side rendering (for private or restricted pages)
-  output: 'server',
-
-  // Use the Netlify adapter for deployment
-  adapter: netlify({
-    edge: false, // keep this false unless you specifically need Netlify Edge
-  }),
-
-  // Basic site settings
-  site: 'https://amicbridge.com', // replace with your real domain if you want
-  integrations: [],
-
-  vite: {
-    // Optional: remove warnings if not needed
-    build: {
-      chunkSizeWarningLimit: 1000,
-    },
-  },
+  output: 'server', // enables SSR
+  adapter: netlify(),
+  site: 'https://amicbridge.com', // your live site URL
 });
