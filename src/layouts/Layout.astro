@@ -1,7 +1,6 @@
 ---
 import '../../src/styles/globals.css';
 import '@fontsource-variable/inter/wght.css';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -10,157 +9,19 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-// Check if user is already authorized via cookie
-const authorized = Astro.cookies.get('auth') === 'true';
-
-// If not authorized, show password page
-if (!authorized && Astro.request.method === 'GET') {
-  return new Response(
-    `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Restricted Access | Amicbridge</title>
-      <style>
-        body {
-          font-family: Inter, sans-serif;
-          background: linear-gradient(to bottom right, #0f172a, #1e293b);
-          color: white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          margin: 0;
-          text-align: center;
-        }
-        h1 {
-          font-size: 2rem;
-          margin-bottom: 1rem;
-        }
-        form {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          background-color: rgba(30, 41, 59, 0.85);
-          padding: 2rem 3rem;
-          border-radius: 1rem;
-          border: 1px solid #334155;
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-        }
-        input {
-          padding: 0.75rem 1rem;
-          margin: 0.75rem 0;
-          border-radius: 0.5rem;
-          border: 1px solid #334155;
-          background: #0f172a;
-          color: white;
-          width: 250px;
-          text-align: center;
-          font-size: 1rem;
-        }
-        button {
-          background-color: #2563eb;
-          border: none;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 0.5rem;
-          font-size: 1rem;
-          cursor: pointer;
-          margin-top: 0.5rem;
-          transition: all 0.3s ease;
-        }
-        button:hover {
-          background-color: #1d4ed8;
-        }
-        p {
-          color: #94a3b8;
-          font-size: 0.9rem;
-          margin-top: 1rem;
-        }
-      </style>
-    </head>
-    <body>
-      <h1>🔒 Restricted Access</h1>
-      <p>Enter the site password to access Amicbridge</p>
-      <form method="POST">
-        <input type="password" name="password" placeholder="Enter password" required />
-        <button type="submit">Enter</button>
-      </form>
-    </body>
-    </html>
-    `,
-    { headers: { 'Content-Type': 'text/html' } }
-  );
-}
-
-// Handle POST (password submission)
-if (Astro.request.method === 'POST') {
-  const formData = await Astro.request.formData();
-  const password = formData.get('password');
-  if (password === 'amicbridge') {
-    Astro.cookies.set('auth', 'true', { path: '/', httpOnly: false });
-    return Response.redirect('/');
-  } else {
-    return new Response(
-      `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Access Denied</title>
-        <style>
-          body {
-            background-color: #0f172a;
-            color: white;
-            font-family: Inter, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-          }
-          a {
-            color: #3b82f6;
-            text-decoration: none;
-            margin-top: 1rem;
-          }
-        </style>
-      </head>
-      <body>
-        <h2>❌ Incorrect Password</h2>
-        <a href="/">Try Again</a>
-      </body>
-      </html>
-      `,
-      { headers: { 'Content-Type': 'text/html' } }
-    );
-  }
-}
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
   </head>
-
-  <body class="antialiased text-white bg-[#0f172a]">
-    <div class="flex flex-col min-h-screen px-6 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 sm:px-12">
-      <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-        <Header />
-        <main class="grow"><slot /></main>
-        <Footer />
-      </div>
-    </div>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
